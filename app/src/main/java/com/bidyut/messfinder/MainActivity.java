@@ -6,13 +6,16 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
+    FirebaseAuth auth;
 BottomNavigationView bnView;
 
     @Override
@@ -20,6 +23,7 @@ BottomNavigationView bnView;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         bnView = findViewById(R.id.bnView);
+        auth = FirebaseAuth.getInstance();
 
         bnView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -40,7 +44,10 @@ BottomNavigationView bnView;
                     loadFrag(new Manager(),false);
 
                 }else {  // profile
-                    loadFrag(new Profile(),false);
+                    auth.signOut();
+                    Toast.makeText(MainActivity.this, "Logout", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+                    startActivity(intent);
                 }
 
                 return true;

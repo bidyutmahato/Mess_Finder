@@ -34,6 +34,7 @@ public class SignUpActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         auth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
+
         progressDialog = new ProgressDialog(SignUpActivity.this);
         progressDialog.setTitle("Creating...");
         progressDialog.setMessage("Creating your account...");
@@ -58,6 +59,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                             Intent intent = new Intent(SignUpActivity.this,MainActivity.class);
                             startActivity(intent);
+                            finish();
 
                             Users user = new Users(binding.etUserName.getText().toString(),
                                                    binding.etEmail.getText().toString(),
