@@ -17,7 +17,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         getSupportActionBar().hide();
 
-        signUp = findViewById(R.id.btn_signUp);
+        signUp = findViewById(R.id.btn_clicksignUp);
         skip = findViewById(R.id.btn_skip);
 
         // signup here text button

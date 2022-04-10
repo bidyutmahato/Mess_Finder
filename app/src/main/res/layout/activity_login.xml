@@ -130,7 +130,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp">
         <TextView
-            android:id="@+id/btn_signUp"
+            android:id="@+id/btn_clicksignUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="New user ? SignUp here"
