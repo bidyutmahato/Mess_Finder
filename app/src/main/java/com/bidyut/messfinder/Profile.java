@@ -1,5 +1,7 @@
 package com.bidyut.messfinder;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -18,7 +20,9 @@ public class Profile extends Fragment {
     public Profile() {
         // Required empty public constructor
     }
-
+    TextView textView;
+    FragmentProfileBinding binding;
+    FirebaseAuth auth;
 
 
     @Override
@@ -26,8 +30,23 @@ public class Profile extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        binding = FragmentProfileBinding.inflate(getLayoutInflater());
+        View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
+
+        textView = view.findViewById(R.id.txtLogout);
+        textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(), "logout", Toast.LENGTH_SHORT).show();
+                auth.signOut();
+
+            }
+
+        });
+
+
+        return view;
 
     }
 }

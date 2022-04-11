@@ -44,10 +44,7 @@ BottomNavigationView bnView;
                     loadFrag(new Manager(),false);
 
                 }else {  // profile
-                    auth.signOut();
-                    Toast.makeText(MainActivity.this, "Logout", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(MainActivity.this,LoginActivity.class);
-                    startActivity(intent);
+                    loadFrag(new Profile() ,false);
                 }
 
                 return true;
