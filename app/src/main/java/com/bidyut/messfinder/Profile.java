@@ -38,7 +38,9 @@ public class Profile extends Fragment {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "logout", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Logout", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getContext(),LoginActivity.class);
+                startActivity(intent);
                 auth.signOut();
 
             }
