@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,7 +21,7 @@ public class Profile extends Fragment {
     public Profile() {
         // Required empty public constructor
     }
-    TextView textView;
+    Button button;
     FragmentProfileBinding binding;
     FirebaseAuth auth;
 
@@ -34,8 +35,8 @@ public class Profile extends Fragment {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
 
-        textView = view.findViewById(R.id.txtLogout);
-        textView.setOnClickListener(new View.OnClickListener() {
+        button = view.findViewById(R.id.btn_Logout);
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getActivity(), "Logout", Toast.LENGTH_SHORT).show();
