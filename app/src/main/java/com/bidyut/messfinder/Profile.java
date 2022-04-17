@@ -42,7 +42,7 @@ public class Profile extends Fragment {
                 Toast.makeText(getActivity(), "Logout", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getContext(),LoginActivity.class);
                 startActivity(intent);
-                auth.signOut();
+               FirebaseAuth.getInstance().signOut();
 
             }
 
