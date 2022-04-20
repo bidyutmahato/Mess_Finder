@@ -8,11 +8,8 @@
     android:gravity="center"
     tools:context=".Search">
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="search"
-        android:textSize="34dp"/>
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>

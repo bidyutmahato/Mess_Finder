@@ -5,13 +5,16 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bidyut.messfinder.Models.MainModel;
 import com.bidyut.messfinder.Models.Users;
 import com.bidyut.messfinder.databinding.FragmentSearchBinding;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -27,6 +30,8 @@ public class Search extends Fragment {
         // Required empty public constructor
     }
 
+    RecyclerView recyclerView;
+    MainAdapter mainAdapter;
 
 
     @Override
@@ -35,7 +40,29 @@ public class Search extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_search, container, false);
 
+          recyclerView =(RecyclerView) view.findViewById(R.id.recyclerView);
+          recyclerView.setHasFixedSize(true);
+          recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        FirebaseRecyclerOptions<MainModel> options =
+                new FirebaseRecyclerOptions.Builder<MainModel>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Mess"),MainModel.class)
+                        .build();
+        mainAdapter = new MainAdapter(options);
+        recyclerView.setAdapter(mainAdapter);
 
         return view;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        mainAdapter.startListening();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        mainAdapter.stopListening();
     }
 }
