@@ -2,15 +2,15 @@ package com.bidyut.messfinder.Models;
 
 public class MainModel {
 
-    String  name ,food , type;
+    String  name ,location , type;
 
     MainModel(){
 
     }
 
-    public MainModel(String name, String food, String type) {
+    public MainModel(String name, String location, String type) {
         this.name = name;
-        this.food = food;
+        this.location = location;
         this.type = type;
     }
 
@@ -22,12 +22,12 @@ public class MainModel {
         this.name = name;
     }
 
-    public String getFood() {
-        return food;
+    public String getLocation() {
+        return location;
     }
 
-    public void setFood(String food) {
-        this.food = food;
+    public void setLocation(String food) {
+        this.location = food;
     }
 
     public String getType() {

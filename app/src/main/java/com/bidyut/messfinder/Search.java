@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 
 import com.bidyut.messfinder.Models.MainModel;
 import com.bidyut.messfinder.Models.Users;
-import com.bidyut.messfinder.databinding.FragmentSearchBinding;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

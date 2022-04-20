@@ -23,7 +23,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter <MainModel,MainAdapter.
     @Override
     protected void onBindViewHolder(@NonNull myViewHolder holder, int position, @NonNull MainModel model) {
         holder.name.setText(model.getName());
-        holder.food.setText(model.getFood());
+        holder.food.setText(model.getLocation());
         holder.type.setText(model.getType());
     }
 
@@ -42,9 +42,9 @@ public class MainAdapter extends FirebaseRecyclerAdapter <MainModel,MainAdapter.
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            img = (CircleImageView)itemView.findViewById(R.id.img1);
+            img = (CircleImageView)itemView.findViewById(R.id.circleImage);
             name = (TextView)itemView.findViewById(R.id.messName);
-            food =  (TextView)itemView.findViewById(R.id.food);
+            food =  (TextView)itemView.findViewById(R.id.location);
             type = (TextView)itemView.findViewById(R.id.type);
 
 

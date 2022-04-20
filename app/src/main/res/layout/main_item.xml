@@ -10,14 +10,14 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="15dp">
+        android:padding="10dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="76dp"
             android:layout_height="76dp"
             android:src="@drawable/icon_home"
             android:layout_centerVertical="true"
-            android:id="@+id/img1"
+            android:id="@+id/circleImage"
             app:civ_border_color="#000"
             app:civ_border_width="2dp"/>
 
@@ -26,31 +26,33 @@
             android:id="@+id/messName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/img1"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/circleImage"
             android:text="Mess Name"
-            android:textStyle="bold"
+            android:textColor="#000"
             android:textSize="20dp"
-            android:layout_marginLeft="10dp"
-            />
-
-        <TextView
-            android:id="@+id/food"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/messName"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/img1"
-            android:text="Food"
-            android:textSize="16dp" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/type"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/img1"
-            android:layout_below="@+id/food"
-            android:text="type"
+            android:layout_below="@+id/messName"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/circleImage"
+            android:text="Mess Type"
+            android:textColor="#000"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/circleImage"
+            android:layout_below="@+id/type"
+            android:text="Location"
             android:textSize="16dp"
+            android:textColor="#000"
             android:layout_marginLeft="10dp"
             />
 
