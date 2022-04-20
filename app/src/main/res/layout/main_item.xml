@@ -30,7 +30,7 @@
             android:layout_toRightOf="@+id/circleImage"
             android:text="Mess Name"
             android:textColor="#000"
-            android:textSize="20dp"
+            android:textSize="19dp"
             android:textStyle="bold" />
 
         <TextView
@@ -42,7 +42,7 @@
             android:layout_toRightOf="@+id/circleImage"
             android:text="Mess Type"
             android:textColor="#000"
-            android:textSize="16dp" />
+            android:textSize="15dp" />
 
         <TextView
             android:id="@+id/location"
@@ -51,7 +51,7 @@
             android:layout_toRightOf="@+id/circleImage"
             android:layout_below="@+id/type"
             android:text="Location"
-            android:textSize="16dp"
+            android:textSize="15dp"
             android:textColor="#000"
             android:layout_marginLeft="10dp"
             />
