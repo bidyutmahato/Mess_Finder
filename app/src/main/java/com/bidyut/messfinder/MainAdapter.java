@@ -3,6 +3,7 @@ package com.bidyut.messfinder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -36,13 +37,12 @@ public class MainAdapter extends FirebaseRecyclerAdapter <MainModel,MainAdapter.
 
     class myViewHolder extends RecyclerView.ViewHolder{
 
-        CircleImageView img;
+        ImageView img;
         TextView name, food , type;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
-
-            img = (CircleImageView)itemView.findViewById(R.id.circleImage);
+            img = (ImageView)itemView.findViewById(R.id.imageView);
             name = (TextView)itemView.findViewById(R.id.messName);
             food =  (TextView)itemView.findViewById(R.id.location);
             type = (TextView)itemView.findViewById(R.id.type);

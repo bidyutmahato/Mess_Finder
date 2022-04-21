@@ -1,17 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Add">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="50dp"
+        android:text="Add New Mess"
+        android:background="@color/purple_500"
+        android:textSize="21dp"
         android:gravity="center"
-        android:textSize="34dp"
-        android:text="Add " />
+        android:textColor="#fff"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Mess Name"
+        android:textSize="16dp"
+        android:gravity="center"
+        />
+    <EditText
+        android:id="@+id/txtName"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        android:background="@drawable/blue_border_rounded_cornwe"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Boys/Girls"
+        android:textSize="16dp"
+        android:gravity="center"
+        />
+    <EditText
+        android:id="@+id/txtType"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        android:background="@drawable/blue_border_rounded_cornwe"/>
 
 
-</FrameLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Mess Adress"
+        android:textSize="16dp"
+        android:gravity="center"
+        />
+    <EditText
+        android:id="@+id/txtLocation"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        android:background="@drawable/blue_border_rounded_cornwe"/>
+
+<Button
+    android:id="@+id/btnAdd"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Submit"
+    android:layout_marginLeft="135dp"
+    android:layout_marginTop="10dp"
+    android:gravity="center"/>
+
+</LinearLayout>
