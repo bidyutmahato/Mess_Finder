@@ -38,17 +38,13 @@ public class MainAdapter extends FirebaseRecyclerAdapter <MainModel,MainAdapter.
 
     class myViewHolder extends RecyclerView.ViewHolder{
 
-        ImageView img;
         TextView name,type,location ;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
-            img = (ImageView)itemView.findViewById(R.id.imageView);
             name = (TextView)itemView.findViewById(R.id.messName);
             type = (TextView)itemView.findViewById(R.id.type);
             location =  (TextView)itemView.findViewById(R.id.location);
-
-
 
         }
     }
