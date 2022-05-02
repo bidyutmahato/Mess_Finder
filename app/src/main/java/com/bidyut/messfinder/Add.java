@@ -28,7 +28,7 @@ public class Add extends Fragment {
         // Required empty public constructor
     }
 
-    EditText name, type ,location;
+    EditText name, type ,location, mobile;
     Button btnAdd;
 
     @Override
@@ -40,6 +40,7 @@ public class Add extends Fragment {
         type = (EditText) view.findViewById(R.id.txtType);
         location = (EditText) view.findViewById(R.id.txtLocation);
         btnAdd = (Button) view.findViewById(R.id.btnAdd);
+        mobile =(EditText) view.findViewById(R.id.txtMobile);
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,6 +59,7 @@ public class Add extends Fragment {
         map.put("name",name.getText().toString());
         map.put("type",type.getText().toString());
         map.put("location",location.getText().toString());
+        map.put("mobile",mobile.getText().toString());
 
         FirebaseDatabase.getInstance().getReference().child("Mess").push()
                 .setValue(map)
@@ -79,6 +81,7 @@ public class Add extends Fragment {
         name.setText(" ");
         type.setText(" ");
         location.setText(" ");
+        mobile.setText(" ");
     }
 
 }
