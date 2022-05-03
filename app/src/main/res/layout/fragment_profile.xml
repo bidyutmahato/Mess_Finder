@@ -1,26 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
     tools:context=".Profile">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_Image"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/profile_icon" />
+
+    // image View of Profile
+
+
+
+    // this is first layout
+
+    <LinearLayout
+        android:id="@+id/profile_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile_Image"
+        android:layout_marginTop="0dp"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/profile_Name_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textSize="16dp" />
+
+        <EditText
+            android:id="@+id/profile_Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/profile_phoneNo_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phone No "
+            android:textSize="16dp" />
+
+        <EditText
+            android:id="@+id/profile_phoneNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/profile_emailId_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email id "
+            android:textSize="16dp" />
+
+        <EditText
+            android:id="@+id/profile_emailId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/profile_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:textSize="34dp"
-        android:text="Profile" />
+        android:layout_below="@id/profile_linear_layout"
+        android:layout_centerHorizontal="true"
+        android:text="Save" />
+
+
+
+
+
+    // this is second layout
+
+
+    <LinearLayout
+        android:id="@+id/profile_linear_layout_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profile_save"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/setting_profile_icon"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginLeft="70dp"
+            android:src="@drawable/icon_notification" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:text="Notification"
+            android:textColor="#000"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+
+    // this is third layout
+
+
+
+    <LinearLayout
+        android:id="@+id/profile_linear_layout_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/profile_linear_layout_2"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/setting_share_icon"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:src="@drawable/icon_share"
+            android:layout_marginLeft="70dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Invite Friends"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"/>
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/btn_Logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="280dp"
-        android:textAllCaps="false"
-        android:text="Logout" />
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/profile_linear_layout_3"
+        android:text="Logout"
+        android:textAllCaps="false" />
 
 
-</FrameLayout>
+</RelativeLayout>
