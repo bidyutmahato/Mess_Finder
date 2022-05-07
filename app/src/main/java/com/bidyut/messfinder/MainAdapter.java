@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bidyut.messfinder.Models.MainModel;
@@ -27,6 +28,14 @@ public class MainAdapter extends FirebaseRecyclerAdapter <MainModel,MainAdapter.
         holder.type.setText(model.getType());
         holder.location.setText(model.getLocation());
 
+            holder.name.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    AppCompatActivity activity = (AppCompatActivity)view.getContext();
+                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.container,new Details(model.getName(),model.getType(),model.getLocation())).addToBackStack(null).commit();
+                }
+            });
+
     }
 
     @NonNull
@@ -38,7 +47,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter <MainModel,MainAdapter.
 
     class myViewHolder extends RecyclerView.ViewHolder{
 
-        TextView name,type,location ;
+        TextView name,type,location;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);

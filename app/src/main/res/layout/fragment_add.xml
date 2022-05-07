@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="Add New Mess"
+        android:text="List your property"
         android:background="@color/purple_500"
         android:textSize="21dp"
         android:gravity="center"
