@@ -6,11 +6,19 @@
     tools:context=".Home">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <SearchView
+        android:id="@+id/univercial_Search"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="3dp"
+
+        android:inputType="textAutoComplete"
+        android:queryHint=" Search by location  "
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:textSize="34dp"
-        android:text="Home Page" />
+        android:layout_height="wrap_content"
+        android:iconifiedByDefault="false"
+        android:background="@drawable/blue_border_rounded_cornwe"/>
+
 
 </FrameLayout>

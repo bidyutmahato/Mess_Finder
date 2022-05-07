@@ -4,7 +4,9 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,6 +24,7 @@ public class Profile extends Fragment {
         // Required empty public constructor
     }
     Button button;
+    TextView listYourProperty;
     FragmentProfileBinding binding;
     FirebaseAuth auth;
 
@@ -36,18 +39,30 @@ public class Profile extends Fragment {
 
 
         button = view.findViewById(R.id.btn_Logout);
+        listYourProperty = view.findViewById(R.id.list_Your_Property);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getActivity(), "Logout", Toast.LENGTH_SHORT).show();
+
                 Intent intent = new Intent(getContext(),LoginActivity.class);
                 startActivity(intent);
+
                FirebaseAuth.getInstance().signOut();
 
             }
 
         });
 
+        listYourProperty.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+               FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
+               fm.replace(R.id.container,new Add()).commit();
+            }
+        });
 
         return view;
 

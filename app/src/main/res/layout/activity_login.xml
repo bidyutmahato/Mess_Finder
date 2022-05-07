@@ -135,7 +135,7 @@
             android:layout_height="wrap_content"
             android:text="New user ? SignUp here"
             android:textColor="#1566e0"
-            android:textSize="13sp" />
+            android:textSize="15sp" />
 
     </LinearLayout>
 

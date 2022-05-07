@@ -22,7 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
-    FirebaseAuth auth;
+FirebaseAuth auth;
 BottomNavigationView bnView;
 MainAdapter mainAdapter;
 RecyclerView recyclerView;
