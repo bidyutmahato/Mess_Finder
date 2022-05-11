@@ -36,11 +36,14 @@ public class MainAdapter extends FirebaseRecyclerAdapter <MainModel,MainAdapter.
                 .error(com.firebase.ui.database.R.drawable.common_google_signin_btn_icon_dark_normal)
                 .into(holder.img);
 
-            holder.name.setOnClickListener(new View.OnClickListener() {
+            holder.img.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     AppCompatActivity activity = (AppCompatActivity)view.getContext();
-                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.container,new Details(model.getName(),model.getType(),model.getLocation())).addToBackStack(null).commit();
+                    activity.getSupportFragmentManager().beginTransaction().replace(R.id.container,
+                            new Details(model.getName(),model.getType(),model.getLocation(),model.getMimage()))
+                            .addToBackStack(null).commit();
+
                 }
             });
 

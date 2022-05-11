@@ -9,7 +9,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 
 public class Details extends Fragment {
@@ -19,16 +24,17 @@ public class Details extends Fragment {
 
     private String mParam1;
     private String mParam2;
-    String name, type, location;
+    String name, type, location, mimage;
 
     public Details() {
 
     }
 
-    public Details (String name,String type,String location){
+    public Details (String name,String type,String location ,String mimage){
         this.name=name;
         this.type=type;
         this.location=location;
+        this.mimage = mimage;
 
     }
 
@@ -59,10 +65,12 @@ public class Details extends Fragment {
         TextView nameholder = view.findViewById(R.id.nameholder);
         TextView typeholder = view.findViewById(R.id.typeholder);
         TextView locationholder = view.findViewById(R.id.locationholder);
+        ImageView imageholder = view.findViewById(R.id.image_holder);
 
         nameholder.setText(name);
         typeholder.setText(type);
         locationholder.setText(location);
+        Glide.with(getContext()).load(mimage).into(imageholder);
 
         return view;
     }

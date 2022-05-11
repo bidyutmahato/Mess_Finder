@@ -24,8 +24,6 @@ import com.google.firebase.database.FirebaseDatabase;
 public class MainActivity extends AppCompatActivity {
 FirebaseAuth auth;
 BottomNavigationView bnView;
-MainAdapter mainAdapter;
-RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +67,7 @@ RecyclerView recyclerView;
             ft.add(R.id.container,fragment);
         else
             ft.replace(R.id.container,fragment);
+
         ft.commit();
     }
 }

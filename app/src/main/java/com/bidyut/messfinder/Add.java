@@ -61,6 +61,7 @@ public class Add extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_add, container, false);
 
@@ -161,6 +162,8 @@ public class Add extends Fragment {
                                 root.child(roll.getText().toString()).setValue(obj);
 
                                 clearAll();
+                                Toast.makeText(getContext(), "Successfully data inserted", Toast.LENGTH_SHORT).show();
+
 
 
                             }
