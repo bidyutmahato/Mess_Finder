@@ -13,13 +13,13 @@
         android:padding="10dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img1"
             android:layout_width="76dp"
             android:layout_height="76dp"
-            android:src="@drawable/icon_home"
             android:layout_centerVertical="true"
-            android:id="@+id/circleImage"
+            android:src="@drawable/icon_home"
             app:civ_border_color="#000"
-            app:civ_border_width="2dp"/>
+            app:civ_border_width="1dp" />
 
 
         <TextView
@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/circleImage"
+            android:layout_toRightOf="@+id/img1"
             android:text="Mess Name"
             android:textColor="#000"
             android:textSize="19dp"
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/messName"
             android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@+id/circleImage"
+            android:layout_toRightOf="@+id/img1"
             android:text="Mess Type"
             android:textColor="#000"
             android:textSize="15dp" />
@@ -48,7 +48,7 @@
             android:id="@+id/location"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/circleImage"
+            android:layout_toRightOf="@+id/img1"
             android:layout_below="@+id/type"
             android:text="Location"
             android:textSize="15dp"

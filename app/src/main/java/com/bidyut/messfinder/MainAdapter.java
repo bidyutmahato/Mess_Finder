@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bidyut.messfinder.Models.MainModel;
+import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
@@ -27,6 +28,13 @@ public class MainAdapter extends FirebaseRecyclerAdapter <MainModel,MainAdapter.
         holder.name.setText(model.getName());
         holder.type.setText(model.getType());
         holder.location.setText(model.getLocation());
+
+        Glide.with(holder.img.getContext())
+                .load(model.getMimage())
+                .placeholder(R.drawable.icon_home)
+                .circleCrop()
+                .error(com.firebase.ui.database.R.drawable.common_google_signin_btn_icon_dark_normal)
+                .into(holder.img);
 
             holder.name.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -47,13 +55,16 @@ public class MainAdapter extends FirebaseRecyclerAdapter <MainModel,MainAdapter.
 
     class myViewHolder extends RecyclerView.ViewHolder{
 
+        CircleImageView img;
         TextView name,type,location;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
+            img = (CircleImageView)itemView.findViewById(R.id.img1);
             name = (TextView)itemView.findViewById(R.id.messName);
             type = (TextView)itemView.findViewById(R.id.type);
             location =  (TextView)itemView.findViewById(R.id.location);
+
 
         }
     }
