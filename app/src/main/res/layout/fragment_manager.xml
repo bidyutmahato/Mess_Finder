@@ -1,16 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Manager">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:textSize="34dp"
-        android:text=" Manager" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+    <EditText
+        android:id="@+id/add_Student_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/blue_border_rounded_cornwe"
+        android:layout_marginTop="5dp"
+        android:hint="Add Student Name "
+        android:paddingLeft="17dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:textSize="15sp"
+        tools:ignore="TouchTargetSizeCheck" />
+    <Button
+        android:id="@+id/add_Student"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ADD"
+        android:layout_gravity="center"/>
+
+        <TextView
+            android:layout_gravity="center"
+            android:layout_marginTop="220dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="this app is under development"/>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

@@ -48,15 +48,17 @@ public class SignUpActivity extends AppCompatActivity {
         progressDialog.setTitle("Creating...");
         progressDialog.setMessage("Creating your account...");
 
+
         binding.termsCondition.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
 
-                Uri uri = Uri.parse("https://techbyts.in/mess-finder-terms-and-conditions/");
-                startActivity(new Intent(Intent.ACTION_VIEW,uri));
+               Uri uri = Uri.parse("https://techbyts.in/mess-finder-terms-and-conditions/");
+               startActivity(new Intent(Intent.ACTION_VIEW,uri));
             }
         });
+
 
 
         binding.btnSignUp.setOnClickListener(new View.OnClickListener() {
