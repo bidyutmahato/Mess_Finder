@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Home">
-
-    <!-- TODO: Update blank fragment layout -->
 
     <SearchView
         android:id="@+id/univercial_Search"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="3dp"
+        android:layout_marginTop="4dp"
 
         android:inputType="textAutoComplete"
         android:queryHint=" Search by location  "
@@ -20,5 +19,19 @@
         android:iconifiedByDefault="false"
         android:background="@drawable/blue_border_rounded_cornwe"/>
 
+    <ViewFlipper
+        android:id="@+id/flipper"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
 
-</FrameLayout>
+        />
+
+
+
+
+
+
+
+</LinearLayout>
