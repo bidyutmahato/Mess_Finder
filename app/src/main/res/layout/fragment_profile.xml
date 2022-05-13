@@ -269,6 +269,7 @@
                 android:layout_marginLeft="20dp"
                 />
             <TextView
+                android:id="@+id/privecy_policy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Privacy Policy"
@@ -288,6 +289,11 @@
             android:layout_below="@id/profile_linear_last_layout"
             android:text="Logout"
             android:textAllCaps="false" />
+
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
     </RelativeLayout>
 

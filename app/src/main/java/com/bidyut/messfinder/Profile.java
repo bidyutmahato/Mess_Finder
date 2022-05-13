@@ -2,6 +2,7 @@ package com.bidyut.messfinder;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,10 +25,12 @@ public class Profile extends Fragment {
     public Profile() {
         // Required empty public constructor
     }
+    TextView privecy;
     Button button;
+    WebView webView;
     TextView listYourProperty;
     FragmentProfileBinding binding;
-    FirebaseAuth auth;
+
 
 
     @Override
@@ -39,7 +43,21 @@ public class Profile extends Fragment {
 
 
         button = view.findViewById(R.id.btn_Logout);
+        privecy = view.findViewById(R.id.privecy_policy);
+        webView=view.findViewById(R.id.webView);
         listYourProperty = view.findViewById(R.id.list_Your_Property);
+
+
+        privecy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // webView.loadUrl("https://techbyts.in/mess-finder-privecy-policy/");
+
+                Uri uri = Uri.parse("https://techbyts.in/mess-finder-privecy-policy/");
+                startActivity(new Intent(Intent.ACTION_VIEW,uri));
+
+            }
+        });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,4 +85,5 @@ public class Profile extends Fragment {
         return view;
 
     }
+
 }
