@@ -143,8 +143,19 @@
             android:textColor="#ffffff"
             android:textSize="13sp" />
 
+
+
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/terms_condition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="term's and condition"
+        android:layout_centerInParent="true"
+        android:textColor="#358cff"
+        android:layout_marginBottom="15dp"/>
 
 
 </RelativeLayout>

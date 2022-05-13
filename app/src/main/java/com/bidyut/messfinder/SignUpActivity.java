@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bidyut.messfinder.Models.Users;
@@ -25,6 +27,7 @@ public class SignUpActivity extends AppCompatActivity {
     private FirebaseAuth auth;
     FirebaseDatabase database;
     ProgressDialog progressDialog;
+
 
 
     @Override
@@ -44,6 +47,17 @@ public class SignUpActivity extends AppCompatActivity {
         progressDialog = new ProgressDialog(SignUpActivity.this);
         progressDialog.setTitle("Creating...");
         progressDialog.setMessage("Creating your account...");
+
+        binding.termsCondition.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                Uri uri = Uri.parse("https://techbyts.in/mess-finder-terms-and-conditions/");
+                startActivity(new Intent(Intent.ACTION_VIEW,uri));
+            }
+        });
+
 
         binding.btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,6 +95,8 @@ public class SignUpActivity extends AppCompatActivity {
                 });
             }
         });
+
+
 
     }
 }
