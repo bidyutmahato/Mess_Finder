@@ -10,9 +10,14 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.LoadAdError;
+
 public class Home extends Fragment {
 
-
+    private AdView mAdView;
 
     public Home() {
         // Required empty public constructor
@@ -31,6 +36,48 @@ public class Home extends Fragment {
 
         for (int i=0; i<imgarray.length;i++)
             showimage (imgarray[i]);
+
+
+
+        // for banner add
+
+
+        mAdView = view.findViewById(R.id.bannerAds);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+
+        mAdView.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                super.onAdLoaded();
+
+            }
+
+            @Override
+            public void onAdFailedToLoad(LoadAdError adError) {
+                super.onAdFailedToLoad(adError);
+                mAdView.loadAd(adRequest);
+            }
+
+            @Override
+            public void onAdOpened() {
+                super.onAdOpened();
+            }
+
+            @Override
+            public void onAdClicked() {
+
+            }
+
+            @Override
+            public void onAdClosed() {
+
+            }
+        });
+
+
+
 
 
         return view;

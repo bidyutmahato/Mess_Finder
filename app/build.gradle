@@ -44,6 +44,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth'
     implementation 'com.google.firebase:firebase-database'
     implementation 'com.google.firebase:firebase-storage:20.0.1'
+
+    implementation 'com.google.android.gms:play-services-ads:20.6.0'
     testImplementation 'junit:junit:4.13.2'
 
     implementation 'com.firebaseui:firebase-ui-database:8.0.1'

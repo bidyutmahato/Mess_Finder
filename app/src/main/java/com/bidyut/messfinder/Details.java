@@ -13,6 +13,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.LoadAdError;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -25,6 +29,7 @@ public class Details extends Fragment {
     private String mParam1;
     private String mParam2;
     String name, type, location, mimage;
+    private AdView mAdView;
 
     public Details() {
 
@@ -71,6 +76,41 @@ public class Details extends Fragment {
         typeholder.setText(type);
         locationholder.setText(location);
         Glide.with(getContext()).load(mimage).into(imageholder);
+
+
+        mAdView = view.findViewById(R.id.bannerAds);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+
+        mAdView.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                super.onAdLoaded();
+
+            }
+
+            @Override
+            public void onAdFailedToLoad(LoadAdError adError) {
+                super.onAdFailedToLoad(adError);
+                mAdView.loadAd(adRequest);
+            }
+
+            @Override
+            public void onAdOpened() {
+                super.onAdOpened();
+            }
+
+            @Override
+            public void onAdClicked() {
+
+            }
+
+            @Override
+            public void onAdClosed() {
+
+            }
+        });
 
         return view;
     }
