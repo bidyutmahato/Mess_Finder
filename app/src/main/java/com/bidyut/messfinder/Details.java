@@ -28,18 +28,19 @@ public class Details extends Fragment {
 
     private String mParam1;
     private String mParam2;
-    String name, type, location, mimage;
+    String name, type, location, mimage, amount;
     private AdView mAdView;
 
     public Details() {
 
     }
 
-    public Details (String name,String type,String location ,String mimage){
+    public Details (String name,String type,String location ,String mimage, String amount){
         this.name=name;
         this.type=type;
         this.location=location;
         this.mimage = mimage;
+        this.amount = amount;
 
     }
 
@@ -70,11 +71,13 @@ public class Details extends Fragment {
         TextView nameholder = view.findViewById(R.id.nameholder);
         TextView typeholder = view.findViewById(R.id.typeholder);
         TextView locationholder = view.findViewById(R.id.locationholder);
+        TextView amountholder = view.findViewById(R.id.amountholder);
         ImageView imageholder = view.findViewById(R.id.image_holder);
 
         nameholder.setText(name);
         typeholder.setText(type);
         locationholder.setText(location);
+        amountholder.setText(amount);
         Glide.with(getContext()).load(mimage).into(imageholder);
 
 

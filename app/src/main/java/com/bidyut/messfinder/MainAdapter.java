@@ -28,6 +28,8 @@ public class MainAdapter extends FirebaseRecyclerAdapter <MainModel,MainAdapter.
         holder.name.setText(model.getName());
         holder.type.setText(model.getType());
         holder.location.setText(model.getLocation());
+        holder.amount.setText(model.getAmount());
+
 
         Glide.with(holder.img.getContext())
                 .load(model.getMimage())
@@ -36,12 +38,12 @@ public class MainAdapter extends FirebaseRecyclerAdapter <MainModel,MainAdapter.
                 .error(com.firebase.ui.database.R.drawable.common_google_signin_btn_icon_dark_normal)
                 .into(holder.img);
 
-            holder.img.setOnClickListener(new View.OnClickListener() {
+            holder.more.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     AppCompatActivity activity = (AppCompatActivity)view.getContext();
                     activity.getSupportFragmentManager().beginTransaction().replace(R.id.container,
-                            new Details(model.getName(),model.getType(),model.getLocation(),model.getMimage()))
+                            new Details(model.getName(),model.getType(),model.getLocation(),model.getMimage(),model.getAmount()))
                             .addToBackStack(null).commit();
 
                 }
@@ -59,7 +61,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter <MainModel,MainAdapter.
     class myViewHolder extends RecyclerView.ViewHolder{
 
         CircleImageView img;
-        TextView name,type,location;
+        TextView name,type,location, amount, more;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -67,6 +69,9 @@ public class MainAdapter extends FirebaseRecyclerAdapter <MainModel,MainAdapter.
             name = (TextView)itemView.findViewById(R.id.messName);
             type = (TextView)itemView.findViewById(R.id.type);
             location =  (TextView)itemView.findViewById(R.id.location);
+            amount =  (TextView)itemView.findViewById(R.id.amount);
+            more =  (TextView)itemView.findViewById(R.id.more);
+
 
 
         }

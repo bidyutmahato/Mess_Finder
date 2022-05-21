@@ -51,7 +51,7 @@ public class Add extends Fragment {
         // Required empty public constructor
     }
 
-    EditText name, type ,location , roll;
+    EditText name, type ,location , roll, amount;
     Button btnAdd;
     Uri filepath;
     ImageView img;
@@ -69,6 +69,7 @@ public class Add extends Fragment {
         type = (EditText)view.findViewById(R.id.txtType);
         location = (EditText)view.findViewById(R.id.txtLocation);
         roll=(EditText)view.findViewById(R.id.roll);
+        amount=(EditText)view.findViewById(R.id.txtAmount);
 
         btnAdd = (Button) view.findViewById(R.id.btnAdd);
         img = (ImageView) view.findViewById(R.id.img);
@@ -158,7 +159,10 @@ public class Add extends Fragment {
                                 FirebaseDatabase db = FirebaseDatabase.getInstance();
                                 DatabaseReference root = db.getReference("Mess");
 
-                                MainModel obj = new MainModel(name.getText().toString(),location.getText().toString(),type.getText().toString(),uri.toString());
+                                MainModel obj = new MainModel(name.getText().toString(),
+                                        location.getText().toString(),type.getText().toString(),
+                                        uri.toString(),amount.getText().toString());
+
                                 root.child(roll.getText().toString()).setValue(obj);
 
                                 clearAll();
@@ -215,6 +219,7 @@ public class Add extends Fragment {
         location.setText(" ");
         roll.setText(" ");
         img.setImageResource(R.drawable.icon_home);
+        amount.setText(" ");
     }
 
 }

@@ -6,17 +6,20 @@ public class MainModel {
     String location;
     String type;
     String mimage;
+    String amount;
 
     MainModel(){
 
     }
 
 
-    public MainModel(String name, String location, String type, String mimage ) {
+    public MainModel(String name, String location, String type, String mimage,String amount ) {
         this.name = name;
         this.location = location;
         this.type = type;
         this.mimage = mimage;
+        this.amount = amount;
+
     }
 
     public String getName() {
@@ -49,5 +52,13 @@ public class MainModel {
 
     public void setMimage(String mimage) {
         this.mimage = mimage;
+    }
+
+    public String getAmount() {
+        return amount;
+    }
+
+    public void setAmount(String amount) {
+        this.amount = amount;
     }
 }
