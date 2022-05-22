@@ -51,7 +51,7 @@ public class Add extends Fragment {
         // Required empty public constructor
     }
 
-    EditText name, type ,location , roll, amount;
+    EditText name, type ,location , roll, amount, about;
     Button btnAdd;
     Uri filepath;
     ImageView img;
@@ -70,6 +70,8 @@ public class Add extends Fragment {
         location = (EditText)view.findViewById(R.id.txtLocation);
         roll=(EditText)view.findViewById(R.id.roll);
         amount=(EditText)view.findViewById(R.id.txtAmount);
+        about=(EditText)view.findViewById(R.id.txtAbout);
+
 
         btnAdd = (Button) view.findViewById(R.id.btnAdd);
         img = (ImageView) view.findViewById(R.id.img);
@@ -161,7 +163,7 @@ public class Add extends Fragment {
 
                                 MainModel obj = new MainModel(name.getText().toString(),
                                         location.getText().toString(),type.getText().toString(),
-                                        uri.toString(),amount.getText().toString());
+                                        uri.toString(),amount.getText().toString(),about.getText().toString());
 
                                 root.child(roll.getText().toString()).setValue(obj);
 
@@ -220,6 +222,7 @@ public class Add extends Fragment {
         roll.setText(" ");
         img.setImageResource(R.drawable.icon_home);
         amount.setText(" ");
+        about.setText(" ");
     }
 
 }

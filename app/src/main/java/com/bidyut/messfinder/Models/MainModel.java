@@ -7,18 +7,28 @@ public class MainModel {
     String type;
     String mimage;
     String amount;
+    String about;
 
     MainModel(){
 
     }
 
 
-    public MainModel(String name, String location, String type, String mimage,String amount ) {
+    public String getAbout() {
+        return about;
+    }
+
+    public void setAbout(String about) {
+        this.about = about;
+    }
+
+    public MainModel(String name, String location, String type, String mimage, String amount, String about ) {
         this.name = name;
         this.location = location;
         this.type = type;
         this.mimage = mimage;
         this.amount = amount;
+        this.about = about;
 
     }
 
