@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1014153108692",
+    "project_id": "mess-finder-303c6",
+    "storage_bucket": "mess-finder-303c6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1014153108692:android:008213bd20d3a957bf6f41",
+        "android_client_info": {
+          "package_name": "com.bidyut.messfinder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1014153108692-icvra1is1am7ooafb3q7367jg6thnorq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDglQYwSVqN23wOyEaJxzNLwpYZ5xUpkAo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1014153108692-icvra1is1am7ooafb3q7367jg6thnorq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
