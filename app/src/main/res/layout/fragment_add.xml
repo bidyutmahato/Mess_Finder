@@ -2,6 +2,7 @@
 
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -9,11 +10,8 @@
 
 <LinearLayout
 
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/addFragment"
     android:orientation="vertical"
     tools:context=".Add">
@@ -86,7 +84,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="Mess Adress"
+        android:text="Mess Location"
         android:textSize="16dp"
         android:gravity="center"
         />
@@ -137,19 +135,20 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="Facilicty "
+        android:text="All Facilicty "
         android:textSize="16dp"
         android:gravity="center"
         />
+
+
     <EditText
         android:id="@+id/txtAbout"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:gravity="center"
-        android:background="@drawable/blue_border_rounded_cornwe"/>
-
+        android:background="@drawable/blue_border_rounded_cornwe"
+        android:gravity="center" />
 
     <Button
     android:id="@+id/btnAdd"

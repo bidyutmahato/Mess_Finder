@@ -81,7 +81,7 @@
                 android:layout_marginTop="5dp"
                 android:text="amount"
                 android:textColor="#000"
-                android:textSize="17dp"
+                android:textSize="15dp"
                 android:textStyle="bold" />
 
             <TextView
