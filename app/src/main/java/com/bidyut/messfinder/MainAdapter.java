@@ -29,6 +29,8 @@ public class MainAdapter extends FirebaseRecyclerAdapter <MainModel,MainAdapter.
         holder.type.setText(model.getType());
         holder.location.setText(model.getLocation());
         holder.amount.setText(model.getAmount());
+        holder.about.setText(model.getAbout());
+        holder.contact.setText(model.getRoll());
 
 
         Glide.with(holder.img.getContext())
@@ -43,7 +45,10 @@ public class MainAdapter extends FirebaseRecyclerAdapter <MainModel,MainAdapter.
                 public void onClick(View view) {
                     AppCompatActivity activity = (AppCompatActivity)view.getContext();
                     activity.getSupportFragmentManager().beginTransaction().replace(R.id.container,
-                            new Details(model.getName(),model.getType(),model.getLocation(),model.getMimage(),model.getAmount()))
+                            new Details(model.getName(),model.getType(),
+                                    model.getLocation(),model.getMimage(),
+                                    model.getAmount(),model.getAbout(),
+                                    model.getRoll()))
                             .addToBackStack(null).commit();
 
                 }
@@ -61,7 +66,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter <MainModel,MainAdapter.
     class myViewHolder extends RecyclerView.ViewHolder{
 
         CircleImageView img;
-        TextView name,type,location, amount, more;
+        TextView name,type,location, amount, more , about, contact;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -71,6 +76,8 @@ public class MainAdapter extends FirebaseRecyclerAdapter <MainModel,MainAdapter.
             location =  (TextView)itemView.findViewById(R.id.location);
             amount =  (TextView)itemView.findViewById(R.id.amount);
             more =  (TextView)itemView.findViewById(R.id.more);
+            about =  (TextView)itemView.findViewById(R.id.about);
+            contact =  (TextView)itemView.findViewById(R.id.contact);
 
 
 

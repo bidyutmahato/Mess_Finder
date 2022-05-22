@@ -8,29 +8,25 @@ public class MainModel {
     String mimage;
     String amount;
     String about;
+    String roll;
 
     MainModel(){
 
     }
 
 
-    public String getAbout() {
-        return about;
-    }
 
-    public void setAbout(String about) {
-        this.about = about;
-    }
-
-    public MainModel(String name, String location, String type, String mimage, String amount, String about ) {
+    public MainModel(String name, String location, String type, String mimage, String amount, String about ,String roll ) {
         this.name = name;
         this.location = location;
         this.type = type;
         this.mimage = mimage;
         this.amount = amount;
         this.about = about;
+        this.roll = roll;
 
     }
+
 
     public String getName() {
         return name;
@@ -71,4 +67,21 @@ public class MainModel {
     public void setAmount(String amount) {
         this.amount = amount;
     }
+
+    public String getAbout() {
+        return about;
+    }
+
+    public void setAbout(String about) {
+        this.about = about;
+    }
+
+    public String getRoll() {
+        return roll;
+    }
+
+    public void setRoll(String roll) {
+        this.roll = roll;
+    }
+
 }

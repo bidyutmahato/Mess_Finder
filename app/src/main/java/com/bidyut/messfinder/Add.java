@@ -51,7 +51,7 @@ public class Add extends Fragment {
         // Required empty public constructor
     }
 
-    EditText name, type ,location , roll, amount, about;
+    EditText name, type ,location , roll, amount, about, contact;
     Button btnAdd;
     Uri filepath;
     ImageView img;
@@ -71,6 +71,7 @@ public class Add extends Fragment {
         roll=(EditText)view.findViewById(R.id.roll);
         amount=(EditText)view.findViewById(R.id.txtAmount);
         about=(EditText)view.findViewById(R.id.txtAbout);
+        contact =(EditText)view.findViewById(R.id.roll);
 
 
         btnAdd = (Button) view.findViewById(R.id.btnAdd);
@@ -163,7 +164,7 @@ public class Add extends Fragment {
 
                                 MainModel obj = new MainModel(name.getText().toString(),
                                         location.getText().toString(),type.getText().toString(),
-                                        uri.toString(),amount.getText().toString(),about.getText().toString());
+                                        uri.toString(),amount.getText().toString(),about.getText().toString(),roll.getText().toString());
 
                                 root.child(roll.getText().toString()).setValue(obj);
 

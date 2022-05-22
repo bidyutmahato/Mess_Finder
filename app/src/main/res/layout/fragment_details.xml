@@ -107,6 +107,48 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="about : "
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/aboutholder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Facility "
+                    android:textSize="20dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contact No : "
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/contactholder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="phone no  "
+                    android:textSize="20dp" />
+
+
+            </LinearLayout>
+
 
             <!--    <LinearLayout-->
             <!--        android:layout_width="wrap_content"-->
