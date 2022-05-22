@@ -134,6 +134,23 @@
         android:background="@drawable/blue_border_rounded_cornwe"/>
 
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Facilicty "
+        android:textSize="16dp"
+        android:gravity="center"
+        />
+    <EditText
+        android:id="@+id/txtabout"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        android:background="@drawable/blue_border_rounded_cornwe"/>
+
+
     <Button
     android:id="@+id/btnAdd"
     android:layout_width="wrap_content"
