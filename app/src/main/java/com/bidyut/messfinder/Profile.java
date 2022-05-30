@@ -25,7 +25,7 @@ public class Profile extends Fragment {
     public Profile() {
         // Required empty public constructor
     }
-    TextView privecy;
+    TextView privecy , invite , needhelp;
     Button button;
     WebView webView;
     TextView listYourProperty;
@@ -46,6 +46,9 @@ public class Profile extends Fragment {
         privecy = view.findViewById(R.id.privecy_policy);
         webView=view.findViewById(R.id.webView);
         listYourProperty = view.findViewById(R.id.list_Your_Property);
+        invite = view.findViewById(R.id.invite_id);
+        needhelp = view.findViewById(R.id.needhelp_id);
+
 
 
         privecy.setOnClickListener(new View.OnClickListener() {
@@ -79,6 +82,27 @@ public class Profile extends Fragment {
 
                FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
                fm.replace(R.id.container,new Add()).commit();
+            }
+        });
+
+        invite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                String Body = "Download the app now";
+                String Sub = "https://play.google.com/store/apps/details?id=com.bidyut.messfinder";
+                intent.putExtra(Intent.EXTRA_TEXT,Body);
+                intent.putExtra(Intent.EXTRA_TEXT,Sub);
+                startActivity(Intent.createChooser(intent,"Share this app"));
+            }
+        });
+
+        needhelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
+                fm.replace(R.id.container,new ContactUs()).commit();
             }
         });
 

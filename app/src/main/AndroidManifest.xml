@@ -11,7 +11,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_foreground"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MessFinder">
+        android:theme="@style/Theme.MessFinder"
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".SignUpActivity"
             android:exported="false" />
@@ -21,7 +22,6 @@
         <activity
             android:name=".SplashActivity"
             android:exported="true">
-
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,12 +34,14 @@
             android:name=".MainActivity"
             android:exported="true">
 
+
+
         </activity>
 
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713"/>
+            android:value="ca-app-pub-6821159508553344~2084520518"/>
 
     </application>
 

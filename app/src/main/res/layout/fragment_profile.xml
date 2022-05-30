@@ -149,6 +149,7 @@
                 android:layout_marginLeft="20dp"
                 />
             <TextView
+                android:id="@+id/invite_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Invite Friends"
@@ -177,6 +178,7 @@
                 android:layout_marginLeft="20dp"
                 />
             <TextView
+                android:id="@+id/needhelp_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Need Help ?"
