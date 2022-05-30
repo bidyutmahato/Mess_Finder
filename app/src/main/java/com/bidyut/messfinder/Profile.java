@@ -25,8 +25,8 @@ public class Profile extends Fragment {
     public Profile() {
         // Required empty public constructor
     }
-    TextView privecy , invite , needhelp;
-    Button button;
+    TextView privecy , invite , needhelp ,settings , notification;
+    Button button ,editprofile;
     WebView webView;
     TextView listYourProperty;
     FragmentProfileBinding binding;
@@ -48,6 +48,9 @@ public class Profile extends Fragment {
         listYourProperty = view.findViewById(R.id.list_Your_Property);
         invite = view.findViewById(R.id.invite_id);
         needhelp = view.findViewById(R.id.needhelp_id);
+        settings = view.findViewById(R.id.setting_id);
+        notification = view.findViewById(R.id.notification_id);
+        editprofile = view.findViewById(R.id.edit_profile_id);
 
 
 
@@ -103,6 +106,30 @@ public class Profile extends Fragment {
             public void onClick(View view) {
                 FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
                 fm.replace(R.id.container,new ContactUs()).commit();
+            }
+        });
+
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
+                fm.replace(R.id.container,new Settings()).commit();
+            }
+        });
+
+        notification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
+                fm.replace(R.id.container,new Notification()).commit();
+            }
+        });
+
+        editprofile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction fm = getActivity().getSupportFragmentManager().beginTransaction();
+                fm.replace(R.id.container,new EditProfile()).commit();
             }
         });
 
