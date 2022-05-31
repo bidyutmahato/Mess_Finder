@@ -21,10 +21,8 @@ public class Manager extends Fragment {
 
     private AdView mAdView;
 
-
-
     public Manager() {
-        // Required empty public constructor
+
     }
 
 
@@ -32,7 +30,7 @@ public class Manager extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_manager, container, false);
 
 
@@ -40,8 +38,11 @@ public class Manager extends Fragment {
         MobileAds.initialize(getContext(), new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
+
             }
         });
+
+        /*
 
         mAdView = view.findViewById(R.id.bannerAds);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -77,6 +78,7 @@ public class Manager extends Fragment {
             }
         });
 
+        */
 
         return view;
     }

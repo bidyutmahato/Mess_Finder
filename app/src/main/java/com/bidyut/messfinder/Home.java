@@ -20,16 +20,17 @@ public class Home extends Fragment {
     private AdView mAdView;
 
     public Home() {
-        // Required empty public constructor
+
     }
 
     ViewFlipper flipper;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(LayoutInflater inflater,ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+
 
         int imgarray[]={R.drawable.slideimage1,R.drawable.slideimage2,R.drawable.slideimage3};
         flipper=(ViewFlipper)view.findViewById(R.id.flipper);
@@ -39,9 +40,7 @@ public class Home extends Fragment {
 
 
 
-        // for banner add
-
-
+/*
         mAdView = view.findViewById(R.id.bannerAds);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
@@ -78,7 +77,7 @@ public class Home extends Fragment {
 
 
 
-
+ */
 
         return view;
     }
@@ -96,4 +95,6 @@ public class Home extends Fragment {
 
 
     }
-}
+ }
+
+

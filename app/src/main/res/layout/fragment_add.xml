@@ -95,7 +95,8 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:gravity="center"
-        android:background="@drawable/blue_border_rounded_cornwe"/>
+        android:background="@drawable/blue_border_rounded_cornwe"
+        />
 
     <TextView
         android:layout_width="match_parent"
