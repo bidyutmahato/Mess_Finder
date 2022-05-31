@@ -111,18 +111,16 @@
             android:textSize="13sp" />
 
 
-
-        <Button
-            android:id="@+id/btn_google"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginLeft="65dp"
-            android:layout_marginRight="65dp"
-            android:layout_marginTop="5dp"
+        <TextView
+            android:id="@+id/btn_skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:drawableLeft="@drawable/common_google_signin_btn_icon_dark_normal"
-            android:text="Sign Up with Google"
-            android:textAllCaps="false"/>
+            android:layout_marginTop="15dp"
+            android:text="SKIP"
+            android:textColor="#1566e0"
+            android:textSize="12.5sp" />
+
 
     </LinearLayout>
 
@@ -138,7 +136,7 @@
             android:layout_height="wrap_content"
             android:text="New user ? SignUp here"
             android:textColor="#1566e0"
-            android:textSize="17sp" />
+            android:textSize="15sp" />
 
     </LinearLayout>
 

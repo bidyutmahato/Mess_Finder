@@ -14,6 +14,7 @@ import android.view.WindowManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bidyut.messfinder.Models.Users;
 import com.bidyut.messfinder.databinding.ActivityLoginBinding;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -28,14 +29,12 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class LoginActivity extends AppCompatActivity {
     ActivityLoginBinding binding;
     ProgressDialog progressDialog;
     FirebaseAuth auth;
-    GoogleSignInClient mGoogleSignInClient;
-
-
     TextView signUp;
 
     @Override
@@ -51,16 +50,11 @@ public class LoginActivity extends AppCompatActivity {
 
         signUp = findViewById(R.id.btn_clicksignUp);
         auth = FirebaseAuth.getInstance();
+
         progressDialog = new ProgressDialog(LoginActivity.this);
         progressDialog.setTitle("Login...");
         progressDialog.setMessage("Login your account...");
 
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
-                .requestEmail()
-                .build();
-
-        mGoogleSignInClient = GoogleSignIn.getClient(this,gso);
 
 
         binding.btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -104,66 +98,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-
-        binding.btnGoogle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                progressDialog.show();
-                signIn();
-            }
-        });
-    }
-
-    int RC_SIGN_IN = 65;
-
-    private void signIn() {
-        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-        startActivityForResult(signInIntent, RC_SIGN_IN);
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == RC_SIGN_IN) {
-
-            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-
-            try {
-                GoogleSignInAccount account = task.getResult(ApiException.class);
-                Log.d("TAG","firebaseAuthWithGoogle"+account.getId());
-                firebaseAuthWithGoogle(account.getIdToken());
-            } catch (ApiException e){
-                Log.w("TAG","google sing in is failed " ,e);
-            }
-        }
-    }
-
-    private void firebaseAuthWithGoogle(String idToken){
-
-        AuthCredential credential = GoogleAuthProvider.getCredential(idToken,null);
-        auth.signInWithCredential(credential)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        progressDialog.dismiss();
-                        if (task.isSuccessful()){
-                            Log.d("TAG","signInWithCredential:sucess");
-                            FirebaseUser user = auth.getCurrentUser();
-
-                            Intent intent = new Intent(LoginActivity.this,MainActivity.class);
-                            startActivity(intent);
-                            Toast.makeText(LoginActivity.this, "Login Sucess", Toast.LENGTH_SHORT).show();
-
-
-                            // updateUI(user);
-                        }else {
-                            Log.w("TAG","signInWithCredential:failure", task.getException());
-                            // Snackbar.make(mBinding.mainLayout,"authentication fail ",Snackbar.LENGTH_SHORT);
-                            // updateUI(null);
-                        }
-                    }
-                });
     }
 
 }
