@@ -125,8 +125,8 @@ public class Details extends Fragment {
 
         return view;
     }
-    public void onBackPress(){
-        AppCompatActivity activity = (AppCompatActivity)getContext();
-        activity.getSupportFragmentManager().beginTransaction().replace(R.id.container,new Search()).addToBackStack(null).commit();
-    }
+//    public void onBackPress(){
+//        AppCompatActivity activity = (AppCompatActivity)getContext();
+//        activity.getSupportFragmentManager().beginTransaction().replace(R.id.container,new Search()).addToBackStack(null).commit();
+//    }
 }

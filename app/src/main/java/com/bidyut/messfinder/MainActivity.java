@@ -38,10 +38,12 @@ BottomNavigationView bnView;
 
                 int id = item.getItemId();
 
-                if (id==R.id.nav_Home){
-                    loadFrag(new Home(),false);
+             //   if (id==R.id.nav_Home){
+                 //   loadFrag(new Home(),false);
 
-                }else if (id==R.id.nav_search){
+              //  }else
+
+                if (id==R.id.nav_search){
                     loadFrag(new Search(),false);
 
                 }else if (id==R.id.nav_add){
@@ -57,7 +59,7 @@ BottomNavigationView bnView;
                 return true;
             }
         });
-        bnView.setSelectedItemId(R.id.nav_Home);
+        bnView.setSelectedItemId(R.id.nav_search);
     }
     public void loadFrag (Fragment fragment, boolean flag){
         FragmentManager fm = getSupportFragmentManager();

@@ -76,6 +76,7 @@ public class Search extends Fragment {
         inflater.inflate(R.menu.search,menu);
         menuItem = menu.findItem(R.id.search);
         searchView = (SearchView) MenuItemCompat.getActionView(menuItem);
+        searchView.setQueryHint("Search by location");
         searchView.setIconified(true);
 
         SearchManager searchManager = (SearchManager)getActivity().getSystemService(Context.SEARCH_SERVICE);

@@ -12,20 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-    <SearchView
-        android:id="@+id/univercial_Search"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="8dp"
-        android:background="@drawable/blue_border_rounded_cornwe"
-        android:iconifiedByDefault="false"
-        android:queryHint=" Search by location"
-        app:queryBackground="@android:color/transparent"
-        />
-
     <ViewFlipper
         android:id="@+id/flipper"
         android:layout_width="match_parent"
@@ -50,8 +36,6 @@
         ads:adUnitId="ca-app-pub-6821159508553344/3516296303">
 
     </com.google.android.gms.ads.AdView>
-
-
 
 
 </RelativeLayout>
